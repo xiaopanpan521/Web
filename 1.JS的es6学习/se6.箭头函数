@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.不能使用arguments 变量 
+        // let fn = k => {
+        //     return k + k;
+        // }
+        // console.log(add(k));
+        // 控制台会报错
+        // 2.不能作为构造实例对象
+        let person = (name,age) => {
+            this.name = name;
+            this.age = age;
+        }
+        let wo = new person('zhangsan,25');
+        console.log(wo);
+        // 3.ES6 允许使用「箭头」（=>）定义函数。
+        //声明一个函数
+        // let fn = function(){
+
+        // }
+        // let fn = (a,b) => {
+        //     return a + b;
+        // }
+        //调用函数
+        // let result = fn(6, 7);
+        // console.log(result);
+
+
+        //. this 是静态的. this 始终指向函数声明时所在作用域下的 this 的值
+    </script>
+</body>
+</html>
