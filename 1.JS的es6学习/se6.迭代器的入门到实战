@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 迭代器是啥东西???美女不懂?待本帅哥慢慢道来
+    迭代器是一种接口,服务于各种数据结构的访问机制.任何数据结构只要部署了lterator接口(it..为对象的一个属性),即刻立即加入战斗,完成遍历操作.
+    <script>
+        const dongman = ['小可爱','中可爱','大可爱','不可爱'];
+        for(let v in dongman){
+            console.log(v);
+        }
+        好了删掉for循环试试下面这个for循环
+        for(let v of dongman){
+            console.log(v);
+        }
+        in保存的是键名,而of保存的是键值;
+        遍历的原理就是首先指针一个数据结构的对象位置,然后不断地next移动,(有点像链式数据结构),然后调用next后返回value和done属性的对象. -->
+
+        <!-- 自定义一个遍历对象,按照自己的意愿(我也不懂啥意思,也许太年轻可能以后会懂吧)
+        const banji = {
+            name: "终极一班",
+            stus: [
+                'xiaoming',
+                'xiaoning',
+                'xiaotian',
+                'knight'
+            ],
+            [Symbol.iterator]() {
+                //索引一个变量
+                let index = 0;
+                //
+                let _this = this;
+                定义一个下标this指向
+                return {
+                    next: function () {
+                        if (index < _this.stus.length) {
+                            const result = { value: _this.stus[index], done: false };
+                            //下标自增
+                            index++;
+                            //返回结果
+                            return result;
+                        }else{
+                            return {value: undefined, done: true};
+                        }
+                    }
+                };
+            }
+        }
+
+        //遍历这个对象 
+        for (let v of banji) {
+            console.log(v); -->
+        }
+    </script>
+</body>
+</html>

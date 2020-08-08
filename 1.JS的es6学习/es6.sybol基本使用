@@ -1,0 +1,56 @@
+先说一下symbol的基本概念:
+1.symbol的值是唯一的,解决命名的问题
+2.symbol的值不能与其他的数据进行运算
+3.symbol定义的对象属性不能使用for..in循环遍历,但可以使用reflect.ownKeys来获取所有键名;
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 1.symbol的值是唯一的,解决命名的问题
+        // let s = symbol();
+        // let s2 = symbol('妖怪');
+        // let s3 = symbol('妖怪');
+        // console.log(s2 === s3);
+        // 这时你会发现会返回false;
+        
+        // console.log(s2,typeof s2);
+        // 让我们检查一下他是什么妖怪;
+        
+        // 那我就想看到返回true的symbol不行吗
+        // 当然可以
+        // let s4 = symbol.for('妖怪');
+        // let s5 = symbol.for('妖怪');
+        // console.log(s4 === s5);
+        // 手动检查,我就不说了
+
+        // // 2.symbol的值不能与其他的数据进行运算
+        // let result = s + 1;
+        // let result = s > 100;
+        // let result = s + '1';
+        // // 都不可以
+
+        // 3.symbol 的使用
+        // 首先给symbol添加一个数据,嗯,先封装一下再添加数据
+        // let bushangxue = {
+        //     name:"炸学校",
+        //     [Symbol('c4')]: function(){
+        //         console.log("你抗炸药包")
+        //     },
+        //     [Symbol('ak47')]: function(){
+        //         console.log("抢走漂亮女同学");
+        //     }
+        // }
+        // console.log(bushangxue)
+        
+
+    </script>
+</body>
+</html>

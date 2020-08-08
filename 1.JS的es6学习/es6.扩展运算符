@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <!-- 首先扩展运算符是什么，有什么用，你不必在书上或者帖子看一堆晦涩难懂的例子，只需要动下小手就能事半功倍。
+    1.数组的合并 -->
+    <script>
+        // const shuzu1 = ['派大星','海绵宝宝'];
+        // const shuzu2 = ['珊迪','蟹老板'];
+        // const shuzu3 = [...shuzu1,...shuzu2];
+        // console.log(shuzu3);
+    //     你可以看到数组1和数组2合并到数组3你就可以直接调用数组3
+
+    // 2.数组的克隆
+        const shuzu1 = ['呱呱呱','嘤嘤嘤','哈哈哈'];
+        const shuzu2 = [...shuzu1];
+        console.log(shuzu2);
+        // 这时你会看到数组2已经克隆了数组1的属性,然而并不能咋滴.
+        
+        // 3.将伪数组转化成真正的数组
+        const shuzu1 = document.querySelectorAll('div');
+        const divArr = [...divs];
+        console.log(divArr);
+        此时伪数组就变成了真正的数组,类似的话argument也可实现;
+    </script>
+</body>
+</html>
