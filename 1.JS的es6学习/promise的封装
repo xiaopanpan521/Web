@@ -18,6 +18,7 @@
             reject(err);
         }, 1000);
     });
+    
 
     //调用 promise 对象的 then 方法
     p.then(function(value){
