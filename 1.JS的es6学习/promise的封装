@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    基本语法
+    const p = new Promise(function(resolve, reject){
+        setTimeout(function(){
+            //
+            // let data = '数据库中的用户数据';
+            // resolve
+            // resolve(data);
+
+            let err = '数据读取失败';
+            reject(err);
+        }, 1000);
+    });
+
+    //调用 promise 对象的 then 方法
+    p.then(function(value){
+        console.log(value);
+    }, function(reason){
+        console.error(reason);
+    })
+
+    //1. 引入 xx(需要你自定义) 模块
+    const fs = require('xx');
+
+    //2. 调用方法读取文件
+    // fs.readFile('./你的文件夹/xx.md', (err, data)=>{
+    //     //如果失败, 则抛出错误
+    //     if(err) throw err;
+    //     //如果没有出错, 则输出内容
+    //     console.log(data.toString());
+    // });
+
+    //3. 使用 Promise 封装
+    const p = new Promise(function(resolve, reject){
+        fs.readFile("./你的文件夹/xx.md", (err, data)=>{
+            //判断如果失败
+            if(err) reject(err);
+            //如果成功
+            resolve(data);
+        });
+    });
+
+    p.then(function(value){
+        console.log(value.toString());
+    }, function(reason){
+        console.log("读取失败!!");
+    });
+
+ 使用2内容比3少很多为什么要使用promise呢?如果存在多个任务而不是单个任务的话,2会不断缩进,而是用promise封装就不会出现这种情况.
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getUsers(){
+            setTimeout(()=>{
+                let data = '用户数据';
+                //调用 next 方法, 并且将数据传入
+                iterator.next(data);
+            }, 1000);
+        }
+
+        function getOrders(){
+            setTimeout(()=>{
+                let data = '订单数据';
+                iterator.next(data);
+            }, 1000)
+        }
+
+        function getGoods(){
+            setTimeout(()=>{
+                let data = '商品数据';
+                iterator.next(data);
+            }, 1000)
+        }
+
+        function * gen(){
+           let user = yield getUsers();
+        //    你会发现可以异步生成用户数据
+           console.log(users);
+           let user = yield getOrders();
+        //    同理
+           console.log(ondrag);
+           let user = yield getGoods();
+           console.log(goods);
+        //    console.log为测试所用
+        }
+        
+
+        //调用生成器函数
+        let iterator = gen();
+        iterator.next();
+    </script>
+</body>
+</html>

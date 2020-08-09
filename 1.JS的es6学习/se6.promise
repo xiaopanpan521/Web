@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    promise为异步解决问题的函数
+    promise的对象有三个状态,成功,失败,初始化
+    <script>
+        const s = new Promise(function(resolve,reject){
+            setTimeout(() => {
+                let data = '数据库';
+                resolve(data);
+            }, 1000);
+        });
+        s.then(function(value){
+            console.log(value);
+        },function(reason){
+            
+        })
+    </script>
+</body>
+</html>
