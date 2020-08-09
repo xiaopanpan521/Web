@@ -1,0 +1,86 @@
+1. <img> 的 title 和 alt 有什么区别 
+
+通常当鼠标滑动到元素上的时候显示 alt 是 <img> 的特有属性，是图片内容的等价描述，用于图片无法加载时显示、读屏器 阅读图片。
+可提图片高可访问性，除了纯装饰图片外都必须设置有意义的值，搜索引擎会 重点分析。
+
+2. 语义化的理解 
+
+用正确的标签做正确的事情！ HTML 语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析；
+ 在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的。 搜索引擎的爬虫依赖于标记来确定上下文和各个关键字的权重，利于 SEO 。
+  使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解
+
+相信大多数的人都被问到过这个问题，这道题被列为了面试必考之一了（呵呵，不权威，强烈要求记一下）
+
+3. div+css的布局较table布局有什么优点？
+
+ 改版的时候更方便 只要改 css 文件。 页面加载速度更快、结构化清晰、页面显示简洁。 表现与结构相分离。
+ 易于优化（ seo ）搜索引擎更友好，排名更容易靠前。
+
+ 4.  你能描述一下渐进增强和优雅降级之间的不同吗 渐进增强：
+
+ 针对低版本浏览器进行构建页面，保证基本的功能，然后再针对高级浏览器 进行效果、交互等改进和追加功能达到更好的用户体验。 
+ 优雅降级：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。
+设置页面不缓存--> <meta http-equiv=”pragma” content=”no-cache”> <meta http-equiv=”cache-control” content=”no-cache”> <meta http-equiv=”expires” content=”0″>
+区别：优雅降级是从复杂的现状开始，并试图减少用户体验的供给，而渐进增 强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来 环境的需要。降级（功能衰减）意味着往回看；
+而渐进增强则意味着朝前看， 同时保证其根基处于安全地带
+（真的十分枯燥，简单点来说，就是一个是从低版本开始，一个是从高版本开始）
+
+5. 简述一下src与href的区别 
+
+src 用于替换当前元素，href用于在当前文档和引用资源之间确立联系。 
+src 是 source 的缩写，指向外部资源的位置，指向的内容将会嵌入到文档中当前标签所 在位置；
+在请求 src 资源时会将其指向的资源下载并应用到文档内，例如 js 脚本， img 图片和 frame 等元素
+（不看一下我真不知道这回事）
+
+6.   css sprite是什么,有什么优缺点 概念：将多个小图片拼接到一个图片中。通过 background-position 和元素尺寸调节需要 显示的背景图案。
+
+优点：
+减少 HTTP 请求数，极大地提高页面加载速度 增加图片信息重复度，提高压缩比，减少图片大小 更换风格方便，只需在一张或几张图片上修改颜色或样式即可实现
+缺点：
+图片合并麻烦 维护麻烦，修改一个图片可能需要从新布局整个图片，样式
+
+7. display: none; 与 visibility: hidden; 的区别 
+
+联系：它们都能让元素不可见
+区别： display:none ;会让元素完全从渲染树中消失，渲染的时候不占据任何空间； visibility: hidden ;不会让元素从渲染树消失，
+渲染师元素继续占据空间，只是内容 不可见 display: none ;
+是非继承属性，子孙节点消失由于元素从渲染树消失造成，通过修改 子孙节点属性无法显示 ；
+visibility: hidden; 是继承属性，子孙节点消失由于继承 了 hidden ，通过设置 visibility: visible; 可以让子孙节点显式
+ 
+{"name": "qiu", "age": 25} 
+修改常规流中元素的 display 通常会造成文档重排。修改 visibility 属性只会造成本 元素的重绘。 
+读屏器不会读取 display: none ;元素内容；会读取 visibility: hidden; 元素内容
+
+8. link 与 @import 的区别 1. link 是 HTML 方式， @import 是CSS方式 2. link 大限度支持并行下载，
+ @import 过多嵌套导致串行下载，出现 FOUC (文档样式短 暂失效) 3. link 可以通过 rel="alternate stylesheet" 指定候选样式 
+ 4. 浏览器对 link 支持早于 @import ，可以使用 @import 对老浏览器隐藏样式 
+ 5. @import 必须在样式规则之前，可以在css文件中引用其他文件 
+ 6. 总体来说： link 优于 @import
+
+ 9.  清除浮动的几种方式，各自的优缺点 
+ 
+  父级 div 定义 height 结尾处加空
+  div 标签 clear:both 父级 div 定义伪类 :after 和 zoom 父级 div 定义 overflow:hidden 
+  父级 div 也浮动，需要定义宽度 结尾处加 br 标签 clear:both 
+  比较好的是第3种方式，好多网站都这么用
+
+  10. 几种常见的CSS布局
+
+      流体布局
+      .left {   float: left;   width: 100px;   height: 200px;   background: red; }
+      .right {   float: right;   width: 200px;   height: 200px;   background: blue;  } 
+       .main {   margin-left: 120px;   margin-right: 220px;   height: 200px;   background: green;  }
+       div class="container">
+       <div class="left"></div>    
+        <div class="right"></div>     
+       <div class="main"></div> 
+       </div>
+    
+    11. 圣杯布局 .container {     margin-left: 120px;     margin-right: 220px; }
+     .main {     float: left;     width: 100%;     height:300px;     background: green; } 
+     left {     position: relative;     left: -120px;    
+      float: left;     height: 300px;     width: 100px;     margin-left: -100%;     background: red; } 
+    .right {     position: relative;     right: -220px;   float: right;    
+     height: 300px;     width: 200px;     margin-left: -200px;     background: blue; }
+
+     
